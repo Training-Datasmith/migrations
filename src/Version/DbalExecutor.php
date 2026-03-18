@@ -267,7 +267,7 @@ final class DbalExecutor implements Executor
 
     private function executeResult(MigratorConfiguration $configuration): void
     {
-        foreach ($this->sql as $key => $query) {
+        foreach ($this->sql as $query) {
             $this->outputSqlQuery($query, $configuration);
 
             $stopwatchEvent = $this->stopwatch->start('query');

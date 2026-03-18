@@ -146,7 +146,7 @@ final class TableMetadataStorage implements MetadataStorage
     /** @return iterable<Query> */
     public function getSql(ExecutionResult $result): iterable
     {
-        yield new Query('-- Version ' . (string) $result->getVersion() . ' update table metadata');
+        yield new Query('-- Version ' . $result->getVersion() . ' update table metadata');
 
         if ($result->getDirection() === Direction::DOWN) {
             yield new Query(sprintf(

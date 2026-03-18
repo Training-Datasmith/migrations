@@ -130,7 +130,10 @@ abstract class DoctrineCommand extends Command
 
     protected function canExecute(string $question, InputInterface $input): bool
     {
-        return ! $input->isInteractive() || $this->io->confirm($question);
+        if (! $input->isInteractive()) {
+            return true;
+        }
+        return $this->io->confirm($question);
     }
 
     private function setNamedEmOrConnection(InputInterface $input): void

@@ -9,12 +9,8 @@ use function realpath;
 
 abstract class ConfigurationFile implements ConfigurationLoader
 {
-    /** @var string */
-    protected $file;
-
-    public function __construct(string $file)
+    public function __construct(protected string $file)
     {
-        $this->file = $file;
     }
 
     /**

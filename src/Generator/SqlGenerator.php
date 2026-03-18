@@ -72,7 +72,7 @@ class SqlGenerator
         }
 
         if (count($code) !== 0 && $checkDbPlatform && $this->configuration->isDatabasePlatformChecked()) {
-            $currentPlatform = '\\' . get_class($this->platform);
+            $currentPlatform = '\\' . $this->platform::class;
 
             array_unshift(
                 $code,

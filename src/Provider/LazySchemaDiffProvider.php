@@ -28,13 +28,13 @@ class LazySchemaDiffProvider implements SchemaDiffProvider
 
         if (PHP_VERSION_ID < 80400) {
             /** @phpstan-ignore staticMethod.notFound */
-            return LazySchema::createLazyProxy(static fn () => $originalSchemaManipulator->createFromSchema());
+            return LazySchema::createLazyProxy(static fn (): \Doctrine\DBAL\Schema\Schema => $originalSchemaManipulator->createFromSchema());
         }
 
         $reflector = new ReflectionClass(Schema::class);
 
         return $reflector->newLazyProxy(
-            static fn () => $originalSchemaManipulator->createFromSchema(),
+            static fn (): \Doctrine\DBAL\Schema\Schema => $originalSchemaManipulator->createFromSchema(),
         );
     }
 
@@ -45,7 +45,7 @@ class LazySchemaDiffProvider implements SchemaDiffProvider
         /** @phpstan-ignore method.notFound */
         if ($fromSchema instanceof LazySchema && ! $fromSchema->isLazyObjectInitialized()) {
             /** @phpstan-ignore staticMethod.notFound */
-            return LazySchema::createLazyProxy(static fn () => $originalSchemaManipulator->createToSchema($fromSchema));
+            return LazySchema::createLazyProxy(static fn (): \Doctrine\DBAL\Schema\Schema => $originalSchemaManipulator->createToSchema($fromSchema));
         }
 
         if (PHP_VERSION_ID >= 80400) {
@@ -53,14 +53,13 @@ class LazySchemaDiffProvider implements SchemaDiffProvider
 
             if ($reflector->isUninitializedLazyObject($fromSchema)) {
                 return $reflector->newLazyProxy(
-                    static function () use ($originalSchemaManipulator, $fromSchema, $reflector) {
+                    
                         /* $this->originalSchemaManipulator may return a lazy
                          * object, for instance DBALSchemaDiffProvider just clones $fromSchema,
                          * which we know is lazy at this point of execution */
-                        return $reflector->initializeLazyObject(
-                            $originalSchemaManipulator->createToSchema($fromSchema),
-                        );
-                    },
+                        static fn() => $reflector->initializeLazyObject(
+                        $originalSchemaManipulator->createToSchema($fromSchema),
+                    ),
                 );
             }
         }

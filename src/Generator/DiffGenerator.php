@@ -51,7 +51,7 @@ class DiffGenerator
     ): string {
         if ($filterExpression !== null) {
             $this->dbalConfiguration->setSchemaAssetsFilter(
-                static function ($assetName) use ($filterExpression) {
+                static function ($assetName) use ($filterExpression): false|int {
                     if ($assetName instanceof NamedObject || $assetName instanceof OptionallyNamedObject) {
                         if ($assetName->getObjectName() === null) {
                             return false;

@@ -12,7 +12,7 @@ use Doctrine\DBAL\Schema\Schema;
  */
 final class StubSchemaProvider implements SchemaProvider
 {
-    private Schema $toSchema;
+    private readonly Schema $toSchema;
 
     public function __construct(Schema $schema)
     {

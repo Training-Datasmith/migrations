@@ -20,7 +20,7 @@ use function usort;
  */
 final class OrmSchemaProvider implements SchemaProvider
 {
-    private EntityManagerInterface $entityManager;
+    private readonly EntityManagerInterface $entityManager;
 
     public function __construct(EntityManagerInterface $em)
     {

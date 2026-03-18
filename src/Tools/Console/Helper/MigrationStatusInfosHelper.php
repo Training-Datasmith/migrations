@@ -117,14 +117,14 @@ class MigrationStatusInfosHelper
                 'Type' => $storage !== null ? $storage::class : null,
             ],
             'Database' => [
-                'Driver' => get_class($this->connection->getDriver()),
+                'Driver' => $this->connection->getDriver()::class,
                 'Name' => $this->connection->getDatabase(),
             ],
             'Versions' => [
-                'Previous' => $this->getFormattedVersionAlias('prev', $executedMigrations),
-                'Current' => $this->getFormattedVersionAlias('current', $executedMigrations),
-                'Next' => $this->getFormattedVersionAlias('next', $executedMigrations),
-                'Latest' => $this->getFormattedVersionAlias('latest', $executedMigrations),
+                'Previous' => $this->getFormattedVersionAlias('prev'),
+                'Current' => $this->getFormattedVersionAlias('current'),
+                'Next' => $this->getFormattedVersionAlias('next'),
+                'Latest' => $this->getFormattedVersionAlias('latest'),
             ],
 
             'Migrations' => [
@@ -172,7 +172,7 @@ class MigrationStatusInfosHelper
         $table->render();
     }
 
-    private function getFormattedVersionAlias(string $alias, ExecutedMigrationsList $executedMigrations): string
+    private function getFormattedVersionAlias(string $alias): string
     {
         try {
             $version = $this->aliasResolver->resolveVersionAlias($alias);

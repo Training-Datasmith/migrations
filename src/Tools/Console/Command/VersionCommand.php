@@ -41,7 +41,6 @@ final class VersionCommand extends DoctrineCommand
                 'version',
                 InputArgument::OPTIONAL,
                 'The version to add or delete.',
-                null,
             )
             ->addOption(
                 'add',

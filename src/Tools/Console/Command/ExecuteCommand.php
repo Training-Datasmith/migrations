@@ -42,7 +42,6 @@ final class ExecuteCommand extends DoctrineCommand
                 'versions',
                 InputArgument::REQUIRED | InputArgument::IS_ARRAY,
                 'The versions to execute.',
-                null,
             )
             ->addOption(
                 'write-sql',
