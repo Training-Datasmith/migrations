@@ -13,11 +13,13 @@ use Doctrine\Migrations\Generator\Generator;
 use Doctrine\Migrations\Generator\SqlGenerator;
 use Doctrine\Migrations\SchemaDumper;
 use InvalidArgumentException;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use RuntimeException;
 
 use function method_exists;
+
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+
+use RuntimeException;
 
 class SchemaDumperTest extends TestCase
 {

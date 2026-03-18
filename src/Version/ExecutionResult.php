@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Version;
 
+use function count;
+
 use DateTimeImmutable;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\Query\Query;
 use RuntimeException;
-use Throwable;
 
-use function count;
+use Throwable;
 
 /**
  * The ExecutionResult class is responsible for storing the result of a migration version after it executes.

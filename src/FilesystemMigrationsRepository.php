@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations;
 
+use function class_exists;
+
 use Doctrine\Migrations\Exception\DuplicateMigrationVersion;
 use Doctrine\Migrations\Exception\MigrationClassNotFound;
 use Doctrine\Migrations\Exception\MigrationException;
@@ -11,9 +13,8 @@ use Doctrine\Migrations\Finder\MigrationFinder;
 use Doctrine\Migrations\Metadata\AvailableMigration;
 use Doctrine\Migrations\Metadata\AvailableMigrationsSet;
 use Doctrine\Migrations\Version\MigrationFactory;
-use Doctrine\Migrations\Version\Version;
 
-use function class_exists;
+use Doctrine\Migrations\Version\Version;
 
 /**
  * The FilesystemMigrationsRepository class is responsible for retrieving migrations, determining what the current migration
@@ -129,11 +130,11 @@ class FilesystemMigrationsRepository implements MigrationsRepository
         $this->migrationsLoaded = true;
 
         foreach ($migrationDirectories as $namespace => $path) {
-                $migrations = $this->migrationFinder->findMigrations(
-                    $path,
-                    $namespace,
-                );
-                $this->registerMigrations($migrations);
+            $migrations = $this->migrationFinder->findMigrations(
+                $path,
+                $namespace,
+            );
+            $this->registerMigrations($migrations);
         }
     }
 }

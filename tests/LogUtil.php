@@ -4,16 +4,22 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests;
 
-use DateTimeInterface;
-use Psr\Log\Test\TestLogger;
-use Stringable;
-
 use function array_map;
+
+use DateTimeInterface;
+
 use function gettype;
+
 use function implode;
 use function is_object;
 use function is_scalar;
+
+use Psr\Log\Test\TestLogger;
+
 use function str_contains;
+
+use Stringable;
+
 use function strtr;
 
 trait LogUtil

@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tools\Console;
 
+use function assert;
+
 use Composer\InstalledVersions;
+
+use const DIRECTORY_SEPARATOR;
+
 use Doctrine\Migrations\Configuration\EntityManager\ExistingEntityManager;
 use Doctrine\Migrations\Configuration\Migration\ConfigurationFileWithFallback;
 use Doctrine\Migrations\DependencyFactory;
@@ -23,18 +28,20 @@ use Doctrine\Migrations\Tools\Console\Command\SyncMetadataCommand;
 use Doctrine\Migrations\Tools\Console\Command\UpToDateCommand;
 use Doctrine\Migrations\Tools\Console\Command\VersionCommand;
 use Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper;
-use RuntimeException;
-use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Helper\HelperSet;
 
-use function assert;
 use function file_exists;
+
 use function getcwd;
 use function is_readable;
 use function method_exists;
+
+use RuntimeException;
+
 use function sprintf;
 
-use const DIRECTORY_SEPARATOR;
+use Symfony\Component\Console\Application;
+
+use Symfony\Component\Console\Helper\HelperSet;
 
 /**
  * The ConsoleRunner class is used to create the Symfony Console application for the Doctrine Migrations console.

@@ -4,21 +4,25 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tools\Console\Command;
 
+use function addslashes;
+use function class_exists;
+
 use Doctrine\Migrations\Tools\Console\Exception\InvalidOptionUsage;
 use Doctrine\Migrations\Tools\Console\Exception\SchemaDumpRequiresNoMigrations;
 use Doctrine\SqlFormatter\SqlFormatter;
-use Symfony\Component\Console\Attribute\AsCommand;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
 
-use function addslashes;
-use function class_exists;
+use const FILTER_VALIDATE_BOOLEAN;
+
 use function filter_var;
+
 use function sprintf;
 use function str_contains;
 
-use const FILTER_VALIDATE_BOOLEAN;
+use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * The DumpSchemaCommand class is responsible for dumping your current database schema to a migration class. This is

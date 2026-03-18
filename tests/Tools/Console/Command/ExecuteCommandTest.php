@@ -20,11 +20,14 @@ use Doctrine\Migrations\Tools\Console\Command\ExecuteCommand;
 use Doctrine\Migrations\Version\Direction;
 use Doctrine\Migrations\Version\MigrationPlanCalculator;
 use Doctrine\Migrations\Version\Version;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use Symfony\Component\Console\Tester\CommandTester;
 
 use function getcwd;
+
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+
+use Symfony\Component\Console\Tester\CommandTester;
+
 use function sys_get_temp_dir;
 use function trim;
 

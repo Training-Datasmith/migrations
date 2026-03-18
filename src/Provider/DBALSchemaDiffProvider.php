@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Provider;
 
+use function class_exists;
+
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
 use Doctrine\DBAL\Schema\ComparatorConfig;
-use Doctrine\DBAL\Schema\Schema;
 
-use function class_exists;
+use Doctrine\DBAL\Schema\Schema;
 
 /**
  * The SchemaDiffProvider class is responsible for providing a Doctrine\DBAL\Schema\Schema instance that

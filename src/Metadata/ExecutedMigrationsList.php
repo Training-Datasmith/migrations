@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Metadata;
 
-use Countable;
-use Doctrine\Migrations\Exception\MigrationNotExecuted;
-use Doctrine\Migrations\Exception\NoMigrationsFoundWithCriteria;
-use Doctrine\Migrations\Version\Version;
-
 use function array_filter;
 use function array_values;
 use function count;
+
+use Countable;
+
+use Doctrine\Migrations\Exception\MigrationNotExecuted;
+use Doctrine\Migrations\Exception\NoMigrationsFoundWithCriteria;
+use Doctrine\Migrations\Version\Version;
 
 /**
  * Represents a sorted list of executed migrations.

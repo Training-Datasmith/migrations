@@ -4,26 +4,31 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations;
 
+use function array_merge;
+use function count;
+
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
 use Doctrine\DBAL\Schema\NamedObject;
 use Doctrine\DBAL\Schema\Table;
 use Doctrine\Migrations\Exception\NoTablesFound;
 use Doctrine\Migrations\Generator\Generator;
+
 use Doctrine\Migrations\Generator\SqlGenerator;
+
+use function implode;
+
 use InvalidArgumentException;
 
-use function array_merge;
-use function count;
-use function implode;
+use const PREG_INTERNAL_ERROR;
+
 use function preg_last_error;
 use function preg_last_error_msg;
 use function preg_match;
 use function restore_error_handler;
 use function set_error_handler;
-use function sprintf;
 
-use const PREG_INTERNAL_ERROR;
+use function sprintf;
 
 /**
  * The SchemaDumper class is responsible for dumping the current state of your database schema to a migration. This

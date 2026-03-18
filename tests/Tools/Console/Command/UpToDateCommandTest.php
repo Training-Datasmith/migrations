@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Tools\Console\Command;
 
+use function array_map;
+
 use DateTimeImmutable;
 use Doctrine\DBAL\Connection;
 use Doctrine\Migrations\AbstractMigration;
@@ -21,11 +23,12 @@ use Doctrine\Migrations\Tools\Console\Command\UpToDateCommand;
 use Doctrine\Migrations\Version\Direction;
 use Doctrine\Migrations\Version\ExecutionResult;
 use Doctrine\Migrations\Version\Version;
+
+use function explode;
+
 use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Component\Console\Tester\CommandTester;
 
-use function array_map;
-use function explode;
 use function sys_get_temp_dir;
 use function trim;
 

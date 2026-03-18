@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Query;
 
-use Doctrine\Migrations\Query\Exception\InvalidArguments;
-use Stringable;
-
 use function count;
+
+use Doctrine\Migrations\Query\Exception\InvalidArguments;
+
+use Stringable;
 
 /**
  * The Query wraps the sql query, parameters and types.

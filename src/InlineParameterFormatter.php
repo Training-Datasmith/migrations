@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations;
 
+use function array_map;
+
 use Doctrine\DBAL\Connection;
+
 use Doctrine\DBAL\Types\Type;
 
-use function array_map;
 use function implode;
 use function is_array;
 use function is_bool;

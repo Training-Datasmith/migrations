@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Tools\Console\Command;
 
+use function class_exists;
+
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Schema\ComparatorConfig;
 use Doctrine\DBAL\Types\Types;
@@ -33,18 +35,22 @@ use Doctrine\Migrations\Version\ExecutionResult;
 use Doctrine\Migrations\Version\MigrationFactory;
 use Doctrine\Migrations\Version\Version;
 use Generator;
+
+use function getcwd;
+use function in_array;
+use function method_exists;
+
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\WithoutErrorHandler;
+
 use PHPUnit\Framework\MockObject\MockObject;
+
+use function sprintf;
+
 use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Tester\CommandTester;
 
-use function class_exists;
-use function getcwd;
-use function in_array;
-use function method_exists;
-use function sprintf;
 use function trim;
 
 class MigrateCommandTest extends MigrationTestCase

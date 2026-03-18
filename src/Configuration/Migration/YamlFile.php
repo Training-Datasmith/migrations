@@ -4,18 +4,20 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Configuration\Migration;
 
+use function assert;
+use function class_exists;
+
 use Doctrine\Migrations\Configuration\Configuration;
 use Doctrine\Migrations\Configuration\Exception\FileNotFound;
 use Doctrine\Migrations\Configuration\Migration\Exception\YamlNotAvailable;
 use Doctrine\Migrations\Configuration\Migration\Exception\YamlNotValid;
-use Symfony\Component\Yaml\Exception\ParseException;
-use Symfony\Component\Yaml\Yaml;
 
-use function assert;
-use function class_exists;
 use function file_exists;
 use function file_get_contents;
 use function is_array;
+
+use Symfony\Component\Yaml\Exception\ParseException;
+use Symfony\Component\Yaml\Yaml;
 
 final class YamlFile extends ConfigurationFile
 {

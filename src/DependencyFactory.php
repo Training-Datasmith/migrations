@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations;
 
+use function array_key_exists;
+use function call_user_func;
+
 use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Connection;
 use Doctrine\Migrations\Configuration\Configuration;
@@ -46,15 +49,17 @@ use Doctrine\Migrations\Version\MigrationPlanCalculator;
 use Doctrine\Migrations\Version\MigrationStatusCalculator;
 use Doctrine\Migrations\Version\SortedMigrationPlanCalculator;
 use Doctrine\ORM\EntityManagerInterface;
+
+use function method_exists;
+
+use function preg_quote;
+
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
-use Symfony\Component\Stopwatch\Stopwatch;
 
-use function array_key_exists;
-use function call_user_func;
-use function method_exists;
-use function preg_quote;
 use function sprintf;
+
+use Symfony\Component\Stopwatch\Stopwatch;
 
 /**
  * The DependencyFactory is responsible for wiring up and managing internal class dependencies.

@@ -4,15 +4,16 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Finder;
 
+use const DIRECTORY_SEPARATOR;
+
 use FilesystemIterator;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RegexIterator;
-use Traversable;
 
 use function sprintf;
 
-use const DIRECTORY_SEPARATOR;
+use Traversable;
 
 /**
  * The RecursiveRegexFinder class recursively searches the given directory for migrations.

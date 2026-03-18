@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Generator;
 
+use function array_map;
+use function array_values;
+
 use Doctrine\DBAL\Configuration as DBALConfiguration;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
@@ -16,11 +19,10 @@ use Doctrine\Migrations\Generator\DiffGenerator;
 use Doctrine\Migrations\Generator\Generator;
 use Doctrine\Migrations\Generator\SqlGenerator;
 use Doctrine\Migrations\Provider\SchemaProvider;
+
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-use function array_map;
-use function array_values;
 use function preg_match;
 
 class DiffGeneratorTest extends TestCase

@@ -6,7 +6,6 @@ namespace Doctrine\Migrations\Tools;
 
 use function floor;
 use function log;
-use function pow;
 use function round;
 
 /**

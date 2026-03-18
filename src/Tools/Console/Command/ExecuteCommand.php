@@ -4,23 +4,26 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tools\Console\Command;
 
+use function array_map;
+use function dirname;
+
 use Doctrine\Migrations\Version\Direction;
 use Doctrine\Migrations\Version\Version;
+
+use function getcwd;
+use function implode;
+use function is_dir;
+
+use function is_string;
+use function is_writable;
+use function sprintf;
+use function strtoupper;
+
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-
-use function array_map;
-use function dirname;
-use function getcwd;
-use function implode;
-use function is_dir;
-use function is_string;
-use function is_writable;
-use function sprintf;
-use function strtoupper;
 
 /**
  * The ExecuteCommand class is responsible for executing migration versions up or down manually.

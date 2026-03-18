@@ -7,12 +7,15 @@ namespace Doctrine\Migrations\Generator;
 use Doctrine\Migrations\Configuration\Configuration;
 use Doctrine\Migrations\Generator\Exception\InvalidTemplateSpecified;
 use Doctrine\Migrations\Tools\Console\Helper\MigrationDirectoryHelper;
-use InvalidArgumentException;
 
 use function explode;
+
 use function file_get_contents;
 use function file_put_contents;
 use function implode;
+
+use InvalidArgumentException;
+
 use function is_file;
 use function is_readable;
 use function preg_match;

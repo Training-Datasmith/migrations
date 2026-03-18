@@ -4,14 +4,17 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests;
 
-use PHPUnit\Framework\Attributes\RequiresOperatingSystem;
-use PHPUnit\Framework\TestCase;
-use Symfony\Component\Process\Process;
-
 use function assert;
 use function file_exists;
+
+use PHPUnit\Framework\Attributes\RequiresOperatingSystem;
+
+use PHPUnit\Framework\TestCase;
+
 use function realpath;
 use function sprintf;
+
+use Symfony\Component\Process\Process;
 
 #[RequiresOperatingSystem('Linux|Darwin')]
 class BoxPharCompileTest extends TestCase

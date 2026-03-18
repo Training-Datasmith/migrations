@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Metadata\Storage;
 
+use function class_exists;
+
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Connections\PrimaryReadReplicaConnection;
 use Doctrine\DBAL\DriverManager;
@@ -22,9 +24,9 @@ use Doctrine\Migrations\Tests\Helper;
 use Doctrine\Migrations\Version\AlphabeticalComparator;
 use Doctrine\Migrations\Version\MigrationFactory;
 use Doctrine\Migrations\Version\Version;
+
 use PHPUnit\Framework\TestCase;
 
-use function class_exists;
 use function sprintf;
 
 class ExistingTableMetadataStorageTest extends TestCase

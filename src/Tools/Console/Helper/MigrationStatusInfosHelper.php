@@ -4,26 +4,27 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tools\Console\Helper;
 
+use function array_unshift;
+use function count;
+
 use DateTimeInterface;
 use Doctrine\DBAL\Connection;
 use Doctrine\Migrations\Configuration\Configuration;
-use Doctrine\Migrations\Metadata\ExecutedMigrationsList;
 use Doctrine\Migrations\Metadata\Storage\MetadataStorage;
 use Doctrine\Migrations\Metadata\Storage\TableMetadataStorageConfiguration;
 use Doctrine\Migrations\Version\AliasResolver;
 use Doctrine\Migrations\Version\MigrationPlanCalculator;
 use Doctrine\Migrations\Version\MigrationStatusCalculator;
 use Doctrine\Migrations\Version\Version;
+
+use function sprintf;
+
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Helper\TableCell;
+
 use Symfony\Component\Console\Helper\TableSeparator;
 use Symfony\Component\Console\Output\OutputInterface;
 use Throwable;
-
-use function array_unshift;
-use function count;
-use function get_class;
-use function sprintf;
 
 /**
  * The MigrationStatusInfosHelper class is responsible for building the array of information used when displaying

@@ -38,8 +38,7 @@ class DoctrineCommandTest extends MigrationTestCase
             ->expects(self::once())
             ->method('freeze');
 
-        $command       = new class ($dependencyFactory) extends DoctrineCommand
-        {
+        $command       = new class ($dependencyFactory) extends DoctrineCommand {
             protected function execute(InputInterface $input, OutputInterface $output): int
             {
                 return 0;
@@ -65,8 +64,7 @@ class DoctrineCommandTest extends MigrationTestCase
             new ExistingConnection($conn),
         );
 
-        $command       = new class ($dependencyFactory) extends DoctrineCommand
-        {
+        $command       = new class ($dependencyFactory) extends DoctrineCommand {
             protected function execute(InputInterface $input, OutputInterface $output): int
             {
                 $migrationDirectories = $this->getDependencyFactory()->getConfiguration()->getMigrationDirectories();
@@ -86,8 +84,7 @@ class DoctrineCommandTest extends MigrationTestCase
     public function testDependencyFactoryIsSetFirst(): void
     {
         $dependencyFactory = $this->createMock(DependencyFactory::class);
-        $command           = new class ($dependencyFactory) extends DoctrineCommand
-        {
+        $command           = new class ($dependencyFactory) extends DoctrineCommand {
             protected function configure(): void
             {
                 $this->getDependencyFactory();
@@ -111,8 +108,7 @@ class DoctrineCommandTest extends MigrationTestCase
             ManagerRegistryEntityManager::withSimpleDefault($registry),
         );
 
-        $command       = new class ($em2, $dependencyFactory) extends DoctrineCommand
-        {
+        $command       = new class ($em2, $dependencyFactory) extends DoctrineCommand {
             private EntityManager $expectedEm;
 
             public function __construct(EntityManager $entityManager, DependencyFactory $dependencyFactory)
@@ -152,8 +148,7 @@ class DoctrineCommandTest extends MigrationTestCase
             ConnectionRegistryConnection::withSimpleDefault($registry),
         );
 
-        $command       = new class ($conn2, $dependencyFactory) extends DoctrineCommand
-        {
+        $command       = new class ($conn2, $dependencyFactory) extends DoctrineCommand {
             private Connection $expectedConnection;
 
             public function __construct(Connection $connection, DependencyFactory $dependencyFactory)
@@ -194,8 +189,7 @@ class DoctrineCommandTest extends MigrationTestCase
             $connLoader,
         );
 
-        $command       = new class ($dependencyFactory) extends DoctrineCommand
-        {
+        $command       = new class ($dependencyFactory) extends DoctrineCommand {
             protected function execute(InputInterface $input, OutputInterface $output): int
             {
                 return 0;
@@ -224,8 +218,7 @@ class DoctrineCommandTest extends MigrationTestCase
             $connLoader,
         );
 
-        $command = new class ($dependencyFactory) extends DoctrineCommand
-        {
+        $command = new class ($dependencyFactory) extends DoctrineCommand {
             protected function configure(): void
             {
                 parent::configure();
@@ -267,8 +260,7 @@ class DoctrineCommandTest extends MigrationTestCase
             $connLoader,
         );
 
-        $command = new class ($dependencyFactory) extends DoctrineCommand
-        {
+        $command = new class ($dependencyFactory) extends DoctrineCommand {
             protected function configure(): void
             {
                 parent::configure();
@@ -312,8 +304,7 @@ class DoctrineCommandTest extends MigrationTestCase
             $connLoader,
         );
 
-        $command = new class ($dependencyFactory) extends DoctrineCommand
-        {
+        $command = new class ($dependencyFactory) extends DoctrineCommand {
             protected function configure(): void
             {
                 parent::configure();
@@ -353,8 +344,7 @@ class DoctrineCommandTest extends MigrationTestCase
             $connLoader,
         );
 
-        $command = new class ($dependencyFactory) extends DoctrineCommand
-        {
+        $command = new class ($dependencyFactory) extends DoctrineCommand {
             protected function configure(): void
             {
                 parent::configure();

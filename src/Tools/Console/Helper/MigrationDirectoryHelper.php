@@ -4,15 +4,17 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tools\Console\Helper;
 
+use function date;
+
+use const DIRECTORY_SEPARATOR;
+
 use Doctrine\Migrations\Configuration\Configuration;
 use Doctrine\Migrations\Tools\Console\Exception\DirectoryDoesNotExist;
 
-use function date;
 use function file_exists;
 use function mkdir;
-use function rtrim;
 
-use const DIRECTORY_SEPARATOR;
+use function rtrim;
 
 /**
  * The MigrationDirectoryHelper class is responsible for returning the directory that migrations are stored in.

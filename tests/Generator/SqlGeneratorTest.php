@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Generator;
 
+use function class_exists;
+
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\SQLitePlatform;
 use Doctrine\Migrations\Configuration\Configuration;
@@ -11,11 +13,12 @@ use Doctrine\Migrations\Generator\SqlGenerator;
 use Doctrine\Migrations\Metadata\Storage\TableMetadataStorageConfiguration;
 use Doctrine\SqlFormatter\NullHighlighter;
 use Doctrine\SqlFormatter\SqlFormatter;
-use PHPUnit\Framework\TestCase;
 
-use function class_exists;
 use function explode;
 use function implode;
+
+use PHPUnit\Framework\TestCase;
+
 use function sprintf;
 use function str_repeat;
 

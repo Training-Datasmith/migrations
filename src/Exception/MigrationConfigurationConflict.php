@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace Doctrine\Migrations\Exception;
 
 use Doctrine\Migrations\AbstractMigration;
-use UnexpectedValueException;
 
 use function get_debug_type;
+
 use function sprintf;
+
+use UnexpectedValueException;
 
 final class MigrationConfigurationConflict extends UnexpectedValueException implements MigrationException
 {

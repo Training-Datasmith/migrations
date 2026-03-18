@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests;
 
+use function array_map;
+
+use const DIRECTORY_SEPARATOR;
+
 use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Connection;
 use Doctrine\Migrations\Configuration\Configuration;
@@ -24,14 +28,13 @@ use Doctrine\Migrations\Version\Direction;
 use Doctrine\Migrations\Version\Version;
 use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Log\Test\TestLogger;
-use Symfony\Component\Console\Output\StreamOutput;
-use Symfony\Component\Stopwatch\Stopwatch;
-use Throwable;
 
-use function array_map;
 use function strval;
 
-use const DIRECTORY_SEPARATOR;
+use Symfony\Component\Console\Output\StreamOutput;
+use Symfony\Component\Stopwatch\Stopwatch;
+
+use Throwable;
 
 class MigratorTest extends MigrationTestCase
 {

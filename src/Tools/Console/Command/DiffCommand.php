@@ -4,23 +4,26 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tools\Console\Command;
 
+use function addslashes;
+use function class_exists;
+use function count;
+
 use Doctrine\Migrations\Generator\Exception\NoChangesDetected;
 use Doctrine\Migrations\Metadata\AvailableMigrationsList;
 use Doctrine\Migrations\Metadata\ExecutedMigrationsList;
 use Doctrine\Migrations\Tools\Console\Exception\InvalidOptionUsage;
 use Doctrine\SqlFormatter\SqlFormatter;
-use Symfony\Component\Console\Attribute\AsCommand;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
 
-use function addslashes;
-use function class_exists;
-use function count;
+use const FILTER_VALIDATE_BOOLEAN;
+
 use function filter_var;
 use function sprintf;
 
-use const FILTER_VALIDATE_BOOLEAN;
+use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * The DiffCommand class is responsible for generating a migration by comparing your current database schema to

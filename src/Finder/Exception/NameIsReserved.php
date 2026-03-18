@@ -6,9 +6,9 @@ namespace Doctrine\Migrations\Finder\Exception;
 
 use InvalidArgumentException;
 
-use function sprintf;
-
 use const PHP_EOL;
+
+use function sprintf;
 
 final class NameIsReserved extends InvalidArgumentException implements FinderException
 {

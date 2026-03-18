@@ -4,20 +4,26 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Generator;
 
+use function class_exists;
+
 use Doctrine\DBAL\Connection;
 use Doctrine\Migrations\Configuration\Configuration;
 use Doctrine\Migrations\Generator\Generator;
+
+use function file_get_contents;
+use function file_put_contents;
+
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+
 use Psr\Log\LoggerInterface;
+
+use function sprintf;
+use function sys_get_temp_dir;
+
 use Test\VersionNonTransactional1234;
 use Test\VersionNonTransactional1235;
 
-use function class_exists;
-use function file_get_contents;
-use function file_put_contents;
-use function sprintf;
-use function sys_get_temp_dir;
 use function unlink;
 
 final class GeneratorTest extends TestCase

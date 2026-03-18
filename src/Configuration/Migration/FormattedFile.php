@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Configuration\Migration;
 
+use function count;
+
 use Doctrine\Migrations\Configuration\Configuration;
+
 use Doctrine\Migrations\Configuration\Migration\Exception\InvalidConfigurationFormat;
 
-use function count;
 use function pathinfo;
 
 use const PATHINFO_EXTENSION;

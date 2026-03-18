@@ -4,15 +4,16 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Generator;
 
+use function array_unshift;
+use function count;
+
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\Migrations\Configuration\Configuration;
 use Doctrine\Migrations\Metadata\Storage\TableMetadataStorageConfiguration;
+
 use Doctrine\SqlFormatter\NullHighlighter;
 use Doctrine\SqlFormatter\SqlFormatter;
 
-use function array_unshift;
-use function count;
-use function get_class;
 use function implode;
 use function preg_replace;
 use function sprintf;
@@ -61,7 +62,7 @@ class SqlGenerator
                 $query = $this->formatQuery($query);
             }
 
-            if ($nowdocOutput === true || ($nowdocOutput !== false && $formatted && strlen($query) > $maxLength )) {
+            if ($nowdocOutput === true || ($nowdocOutput !== false && $formatted && strlen($query) > $maxLength)) {
                 $code[] = sprintf(
                     "\$this->addSql(<<<'SQL'\n%s\nSQL);",
                     preg_replace('/^/m', str_repeat(' ', 4), $query),

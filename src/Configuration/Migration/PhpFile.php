@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Configuration\Migration;
 
+use function assert;
+
 use Doctrine\Migrations\Configuration\Configuration;
+
 use Doctrine\Migrations\Configuration\Exception\FileNotFound;
 
-use function assert;
 use function file_exists;
 use function is_array;
 

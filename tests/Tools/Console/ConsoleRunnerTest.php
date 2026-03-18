@@ -4,24 +4,30 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Tools\Console;
 
+use function chdir;
+use function class_exists;
+
 use Doctrine\DBAL\Platforms\SQLitePlatform;
 use Doctrine\Migrations\DependencyFactory;
 use Doctrine\Migrations\Tools\Console\ConsoleRunner;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper;
+
+use function getcwd;
+
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
+
+use function realpath;
+
 use RuntimeException;
+
+use function sprintf;
+
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\HelperSet;
-
-use function chdir;
-use function class_exists;
-use function getcwd;
-use function realpath;
-use function sprintf;
 
 #[CoversClass(ConsoleRunner::class)]
 class ConsoleRunnerTest extends TestCase

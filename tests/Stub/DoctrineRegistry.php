@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Stub;
 
+use function array_combine;
+use function array_keys;
+
 use Doctrine\DBAL\Connection;
 use Doctrine\ORM\EntityManager;
 use Doctrine\Persistence\AbstractManagerRegistry;
+
 use Doctrine\Persistence\Proxy;
 use Exception;
-
-use function array_combine;
-use function array_keys;
 
 class DoctrineRegistry extends AbstractManagerRegistry
 {

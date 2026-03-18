@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Metadata;
 
+use function count;
+
 use Countable;
+
 use Doctrine\Migrations\Exception\NoMigrationsFoundWithCriteria;
 
-use function count;
 use function end;
 use function reset;
 

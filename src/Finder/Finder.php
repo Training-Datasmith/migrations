@@ -4,15 +4,18 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Finder;
 
+use function assert;
+
 use Doctrine\Migrations\Finder\Exception\InvalidDirectory;
 use Doctrine\Migrations\Finder\Exception\NameIsReserved;
-use ReflectionClass;
 
-use function assert;
 use function get_declared_classes;
 use function in_array;
 use function is_dir;
 use function realpath;
+
+use ReflectionClass;
+
 use function strlen;
 use function strncmp;
 

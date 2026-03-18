@@ -4,16 +4,18 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Configuration\Migration;
 
+use const DIRECTORY_SEPARATOR;
+
+use function dirname;
+
 use Doctrine\Migrations\Configuration\Configuration;
 use Doctrine\Migrations\Configuration\Migration\Exception\InvalidConfigurationKey;
 use Doctrine\Migrations\Exception\MigrationException;
 use Doctrine\Migrations\Metadata\Storage\TableMetadataStorageConfiguration;
+
 use InvalidArgumentException;
+
 use PHPUnit\Framework\TestCase;
-
-use function dirname;
-
-use const DIRECTORY_SEPARATOR;
 
 abstract class LoaderTestCase extends TestCase
 {

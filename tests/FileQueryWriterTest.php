@@ -8,13 +8,16 @@ use Doctrine\Migrations\FileQueryWriter;
 use Doctrine\Migrations\Generator\FileBuilder;
 use Doctrine\Migrations\Query\Query;
 use Doctrine\Migrations\Version\Direction;
-use Psr\Log\LoggerInterface;
 
 use function file_get_contents;
+
 use function glob;
 use function is_dir;
 use function is_file;
 use function method_exists;
+
+use Psr\Log\LoggerInterface;
+
 use function realpath;
 use function sys_get_temp_dir;
 use function unlink;

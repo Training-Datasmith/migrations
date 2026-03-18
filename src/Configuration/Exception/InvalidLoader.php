@@ -6,9 +6,11 @@ namespace Doctrine\Migrations\Configuration\Exception;
 
 use Doctrine\Migrations\Configuration\Connection\ConnectionLoader;
 use Doctrine\Migrations\Configuration\EntityManager\EntityManagerLoader;
-use InvalidArgumentException;
 
 use function get_debug_type;
+
+use InvalidArgumentException;
+
 use function sprintf;
 
 final class InvalidLoader extends InvalidArgumentException implements ConfigurationException

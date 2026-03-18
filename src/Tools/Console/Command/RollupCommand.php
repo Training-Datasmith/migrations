@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tools\Console\Command;
 
+use function sprintf;
+
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 
-use function sprintf;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * The RollupCommand class is responsible for deleting all previously executed migrations from the versions table

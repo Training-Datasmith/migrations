@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace Doctrine\Migrations\Configuration\Connection\Exception;
 
 use Doctrine\DBAL\Connection;
-use InvalidArgumentException;
 
 use function get_debug_type;
+
+use InvalidArgumentException;
+
 use function sprintf;
 
 final class InvalidConfiguration extends InvalidArgumentException implements LoaderException

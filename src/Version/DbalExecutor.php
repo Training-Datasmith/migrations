@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Version;
 
+use function count;
+
 use DateTimeImmutable;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Schema\Schema;
@@ -19,13 +21,15 @@ use Doctrine\Migrations\Provider\SchemaDiffProvider;
 use Doctrine\Migrations\Query\Query;
 use Doctrine\Migrations\Tools\BytesFormatter;
 use Doctrine\Migrations\Tools\TransactionHelper;
+
+use function method_exists;
+
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
+
 use Symfony\Component\Stopwatch\Stopwatch;
 use Throwable;
 
-use function count;
-use function method_exists;
 use function ucfirst;
 
 /**

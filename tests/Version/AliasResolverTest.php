@@ -28,9 +28,10 @@ use Doctrine\Migrations\Version\SortedMigrationPlanCalculator;
 use Doctrine\Migrations\Version\Version;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Throwable;
 
 use function sys_get_temp_dir;
+
+use Throwable;
 
 final class AliasResolverTest extends TestCase
 {

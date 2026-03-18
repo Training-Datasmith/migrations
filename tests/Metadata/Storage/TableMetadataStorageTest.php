@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Metadata\Storage;
 
+use function class_exists;
+
 use DateTime;
 use DateTimeImmutable;
 use Doctrine\DBAL\Configuration;
@@ -30,12 +32,14 @@ use Doctrine\Migrations\Version\AlphabeticalComparator;
 use Doctrine\Migrations\Version\Direction;
 use Doctrine\Migrations\Version\ExecutionResult;
 use Doctrine\Migrations\Version\Version;
+
+use function method_exists;
+
 use PHPUnit\Framework\TestCase;
+
 use Psr\Log\Test\TestLogger;
 use ReflectionClass;
 
-use function class_exists;
-use function method_exists;
 use function sprintf;
 
 class TableMetadataStorageTest extends TestCase

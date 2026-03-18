@@ -4,23 +4,29 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Configuration\Migration;
 
+use function assert;
+
+use const DIRECTORY_SEPARATOR;
+
 use Doctrine\Migrations\Configuration\Configuration;
 use Doctrine\Migrations\Configuration\Exception\FileNotFound;
 use Doctrine\Migrations\Configuration\Migration\Exception\XmlNotValid;
 use Doctrine\Migrations\Tools\BooleanStringFormatter;
-use DOMDocument;
-use SimpleXMLElement;
 
-use function assert;
+use DOMDocument;
+
 use function file_exists;
 use function file_get_contents;
 use function libxml_clear_errors;
+
+use const LIBXML_NOCDATA;
+
 use function libxml_use_internal_errors;
 use function simplexml_load_string;
-use function strtr;
 
-use const DIRECTORY_SEPARATOR;
-use const LIBXML_NOCDATA;
+use SimpleXMLElement;
+
+use function strtr;
 
 final class XmlFile extends ConfigurationFile
 {

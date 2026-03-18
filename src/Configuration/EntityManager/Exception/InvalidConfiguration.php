@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace Doctrine\Migrations\Configuration\EntityManager\Exception;
 
 use Doctrine\ORM\EntityManagerInterface;
-use InvalidArgumentException;
 
 use function get_debug_type;
+
+use InvalidArgumentException;
+
 use function sprintf;
 
 final class InvalidConfiguration extends InvalidArgumentException implements LoaderException

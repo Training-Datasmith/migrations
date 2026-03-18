@@ -4,21 +4,23 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Version;
 
+use function array_diff;
+use function array_filter;
+use function array_map;
+use function array_reverse;
+use function count;
+
 use Doctrine\Migrations\Exception\MigrationClassNotFound;
 use Doctrine\Migrations\Metadata;
 use Doctrine\Migrations\Metadata\AvailableMigration;
 use Doctrine\Migrations\Metadata\AvailableMigrationsList;
+
 use Doctrine\Migrations\Metadata\ExecutedMigrationsList;
 use Doctrine\Migrations\Metadata\MigrationPlan;
 use Doctrine\Migrations\Metadata\MigrationPlanList;
 use Doctrine\Migrations\Metadata\Storage\MetadataStorage;
 use Doctrine\Migrations\MigrationsRepository;
 
-use function array_diff;
-use function array_filter;
-use function array_map;
-use function array_reverse;
-use function count;
 use function in_array;
 use function reset;
 use function uasort;

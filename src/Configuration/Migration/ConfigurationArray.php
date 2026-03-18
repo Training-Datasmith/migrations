@@ -4,14 +4,16 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Configuration\Migration;
 
+use function assert;
+use function call_user_func;
+
 use Closure;
 use Doctrine\Migrations\Configuration\Configuration;
 use Doctrine\Migrations\Configuration\Migration\Exception\InvalidConfigurationKey;
+
 use Doctrine\Migrations\Metadata\Storage\TableMetadataStorageConfiguration;
 use Doctrine\Migrations\Tools\BooleanStringFormatter;
 
-use function assert;
-use function call_user_func;
 use function is_array;
 use function is_bool;
 use function is_callable;

@@ -25,7 +25,7 @@ class ExecutionResultTest extends TestCase
 
     public function testGetSetSql(): void
     {
-         $queries = $this->versionExecutionResult->getSql();
+        $queries = $this->versionExecutionResult->getSql();
         self::assertCount(1, $queries);
         self::assertSame('SELECT 1', $queries[0]->getStatement());
         self::assertSame([1], $queries[0]->getParameters());

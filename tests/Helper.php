@@ -4,15 +4,18 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests;
 
+use function array_map;
+
 use Doctrine\Migrations\AbstractMigration;
 use Doctrine\Migrations\FilesystemMigrationsRepository;
 use Doctrine\Migrations\MigrationsRepository;
 use Doctrine\Migrations\Version\Version;
-use ReflectionMethod;
 
-use function array_map;
 use function glob;
 use function is_file;
+
+use ReflectionMethod;
+
 use function rmdir;
 use function unlink;
 

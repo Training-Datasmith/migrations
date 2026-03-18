@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Generator;
 
+use function class_exists;
+
 use Doctrine\DBAL\Configuration as DBALConfiguration;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Schema\AbstractAsset;
@@ -13,9 +15,9 @@ use Doctrine\DBAL\Schema\NamedObject;
 use Doctrine\DBAL\Schema\OptionallyNamedObject;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\Generator\Exception\NoChangesDetected;
+
 use Doctrine\Migrations\Provider\SchemaProvider;
 
-use function class_exists;
 use function method_exists;
 use function preg_match;
 

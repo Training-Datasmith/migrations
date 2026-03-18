@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Finder;
 
+use function count;
+
 use Doctrine\Migrations\Finder\RecursiveRegexFinder;
+
+use function in_array;
+
 use InvalidArgumentException;
 
-use function count;
-use function in_array;
 use function is_link;
 use function sort;
 

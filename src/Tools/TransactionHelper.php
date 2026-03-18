@@ -7,9 +7,10 @@ namespace Doctrine\Migrations\Tools;
 use Doctrine\DBAL\Connection;
 use Doctrine\Deprecations\Deprecation;
 use LogicException;
-use PDO;
 
 use function method_exists;
+
+use PDO;
 
 /** @internal */
 final class TransactionHelper

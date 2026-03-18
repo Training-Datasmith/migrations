@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Doctrine\Migrations;
 
 use Doctrine\Migrations\Tools\Console\ConsoleRunner;
-use Phar;
 
 use function extension_loaded;
+
 use function file_exists;
 use function fwrite;
+
+use Phar;
 
 use const PHP_EOL;
 use const STDERR;

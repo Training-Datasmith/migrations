@@ -8,9 +8,11 @@ use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\Migrations\Configuration\Connection\Exception\FileNotFound;
 use Doctrine\Migrations\Configuration\Connection\Exception\InvalidConfiguration;
-use InvalidArgumentException;
 
 use function file_exists;
+
+use InvalidArgumentException;
+
 use function is_array;
 
 /**

@@ -7,9 +7,10 @@ namespace Doctrine\Migrations\Configuration\EntityManager;
 use Doctrine\Migrations\Configuration\EntityManager\Exception\FileNotFound;
 use Doctrine\Migrations\Configuration\EntityManager\Exception\InvalidConfiguration;
 use Doctrine\ORM\EntityManagerInterface;
-use InvalidArgumentException;
 
 use function file_exists;
+
+use InvalidArgumentException;
 
 /**
  * This class will return an EntityManager instance, loaded from a configuration file provided as argument.

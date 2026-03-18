@@ -12,9 +12,10 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\Driver\XmlDriver;
 use Doctrine\ORM\ORMSetup;
-use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 
 use const PHP_VERSION_ID;
+
+use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 
 /**
  * Tests the OrmSchemaProvider using a real entity manager.

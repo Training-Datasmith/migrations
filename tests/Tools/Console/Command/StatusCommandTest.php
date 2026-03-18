@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Tools\Console\Command;
 
+use function array_map;
+
 use DateTimeImmutable;
 use Doctrine\Migrations\Configuration\Configuration;
 use Doctrine\Migrations\Configuration\Connection\ExistingConnection;
@@ -16,12 +18,13 @@ use Doctrine\Migrations\Tools\Console\Command\StatusCommand;
 use Doctrine\Migrations\Version\Direction;
 use Doctrine\Migrations\Version\ExecutionResult;
 use Doctrine\Migrations\Version\Version;
-use Symfony\Component\Console\Tester\CommandTester;
 
-use function array_map;
 use function explode;
 use function sprintf;
 use function str_pad;
+
+use Symfony\Component\Console\Tester\CommandTester;
+
 use function sys_get_temp_dir;
 use function trim;
 

@@ -4,27 +4,30 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tools\Console\Command;
 
+use function count;
+use function dirname;
+
 use Doctrine\Migrations\Exception\NoMigrationsFoundWithCriteria;
 use Doctrine\Migrations\Exception\NoMigrationsToExecute;
 use Doctrine\Migrations\Exception\UnknownMigrationVersion;
 use Doctrine\Migrations\Metadata\ExecutedMigrationsList;
 use Doctrine\Migrations\Tools\Console\ConsoleInputMigratorConfigurationFactory;
+
+use function getcwd;
+use function in_array;
+use function is_dir;
+use function is_string;
+
+use function is_writable;
+use function sprintf;
+use function str_starts_with;
+
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-
-use function count;
-use function dirname;
-use function getcwd;
-use function in_array;
-use function is_dir;
-use function is_string;
-use function is_writable;
-use function sprintf;
-use function str_starts_with;
 
 /**
  * The MigrateCommand class is responsible for executing a migration from the current version to another

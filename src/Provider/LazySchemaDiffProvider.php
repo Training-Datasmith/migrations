@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Doctrine\Migrations\Provider;
 
 use Doctrine\DBAL\Schema\Schema;
-use ReflectionClass;
 
 use const PHP_VERSION_ID;
+
+use ReflectionClass;
 
 /**
  * The LazySchemaDiffProvider is responsible for lazily generating the from schema when diffing two schemas
@@ -53,11 +54,11 @@ class LazySchemaDiffProvider implements SchemaDiffProvider
 
             if ($reflector->isUninitializedLazyObject($fromSchema)) {
                 return $reflector->newLazyProxy(
-                    
-                        /* $this->originalSchemaManipulator may return a lazy
-                         * object, for instance DBALSchemaDiffProvider just clones $fromSchema,
-                         * which we know is lazy at this point of execution */
-                        static fn() => $reflector->initializeLazyObject(
+
+                    /* $this->originalSchemaManipulator may return a lazy
+                     * object, for instance DBALSchemaDiffProvider just clones $fromSchema,
+                     * which we know is lazy at this point of execution */
+                    static fn () => $reflector->initializeLazyObject(
                         $originalSchemaManipulator->createToSchema($fromSchema),
                     ),
                 );

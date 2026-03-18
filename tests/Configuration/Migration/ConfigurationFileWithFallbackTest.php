@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Configuration\Migration;
 
+use function chdir;
+
 use Doctrine\Migrations\Configuration\Migration\ConfigurationFileWithFallback;
 use Doctrine\Migrations\Configuration\Migration\Exception\MissingConfigurationFile;
-use PHPUnit\Framework\TestCase;
 
-use function chdir;
 use function getcwd;
+
+use PHPUnit\Framework\TestCase;
 
 class ConfigurationFileWithFallbackTest extends TestCase
 {

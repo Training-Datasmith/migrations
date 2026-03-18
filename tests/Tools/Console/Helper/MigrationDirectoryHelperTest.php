@@ -4,19 +4,22 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Tools\Console\Helper;
 
+use function date;
+
+use const DIRECTORY_SEPARATOR;
+
 use Doctrine\Migrations\Configuration\Configuration;
 use Doctrine\Migrations\Tests\Helper;
 use Doctrine\Migrations\Tests\MigrationTestCase;
+
 use Doctrine\Migrations\Tools\Console\Helper\MigrationDirectoryHelper;
 use InvalidArgumentException;
 
-use function date;
 use function mkdir;
 use function sys_get_temp_dir;
 use function tempnam;
-use function unlink;
 
-use const DIRECTORY_SEPARATOR;
+use function unlink;
 
 class MigrationDirectoryHelperTest extends MigrationTestCase
 {

@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Metadata\Storage;
 
+use function array_change_key_case;
+
+use const CASE_LOWER;
+
+use function class_exists;
+
 use DateTimeImmutable;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Connections\PrimaryReadReplicaConnection;
@@ -23,22 +29,22 @@ use Doctrine\Migrations\MigrationsRepository;
 use Doctrine\Migrations\Query\Query;
 use Doctrine\Migrations\Version\Comparator as MigrationsComparator;
 use Doctrine\Migrations\Version\Direction;
+
 use Doctrine\Migrations\Version\ExecutionResult;
 use Doctrine\Migrations\Version\Version;
+
+use function floatval;
+
 use InvalidArgumentException;
 
-use function array_change_key_case;
-use function class_exists;
-use function floatval;
 use function method_exists;
 use function round;
 use function sprintf;
 use function strlen;
 use function strpos;
 use function strtolower;
-use function uasort;
 
-use const CASE_LOWER;
+use function uasort;
 
 final class TableMetadataStorage implements MetadataStorage
 {

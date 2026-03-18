@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Doctrine\Migrations\Tests\Version;
 
+use function count;
+
 use Doctrine\Migrations\AbstractMigration;
 use Doctrine\Migrations\Exception\MigrationClassNotFound;
 use Doctrine\Migrations\Metadata\AvailableMigration;
@@ -20,9 +22,9 @@ use Doctrine\Migrations\Version\SortedMigrationPlanCalculator;
 use Doctrine\Migrations\Version\Version;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;
+
 use PHPUnit\Framework\TestCase;
 
-use function count;
 use function strcmp;
 
 final class MigrationPlanCalculatorTest extends TestCase
@@ -217,7 +219,7 @@ final class MigrationPlanCalculatorTest extends TestCase
 
     public function testCustomMigrationSorting(): void
     {
-        $reverseSorter           = new class implements Comparator {
+        $reverseSorter           = new class () implements Comparator {
             public function compare(Version $a, Version $b): int
             {
                 return strcmp((string) $b, (string) $a);
