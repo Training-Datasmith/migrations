@@ -84,6 +84,10 @@ TEMPLATE;
 
         [$fqcn, $namespace, $className] = $mch;
 
+        if (preg_match('~[/\\\\]~', $className) === 1) {
+            throw new InvalidArgumentException(sprintf('Invalid migration class name "%s": must not contain path separators', $className));
+        }
+
         $dirs = $this->configuration->getMigrationDirectories();
         if (! isset($dirs[$namespace])) {
             throw new InvalidArgumentException(sprintf('Path not defined for the namespace "%s"', $namespace));

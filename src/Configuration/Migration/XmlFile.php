@@ -20,6 +20,7 @@ use function file_get_contents;
 use function libxml_clear_errors;
 
 use const LIBXML_NOCDATA;
+use const LIBXML_NONET;
 
 use function libxml_use_internal_errors;
 use function simplexml_load_string;
@@ -118,7 +119,7 @@ final class XmlFile extends ConfigurationFile
 
             $xml = new DOMDocument();
 
-            if ($xml->load($file) === false) {
+            if ($xml->load($file, LIBXML_NONET) === false) {
                 throw XmlNotValid::malformed();
             }
 
